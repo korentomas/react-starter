@@ -3,48 +3,17 @@ const screens = new URL('./assets/screens.svg', import.meta.url)
 
 const Content = () => {
   return (
-    <>
-      <section className="river">
-        <img src={laptop} alt="Laptop with a play button" aria-hidden="true" />
-        <article>
-          <h1>
-            <small>React + Contentful</small>
-            React Contentful Homepage Starter
-          </h1>
-          <p>
-            Clone, edit, and customize this starter to build your own React app.
-          </p>
-          <div className="buttons">
-            <button className="button-large">
-              <a href="https://www.contentful.com/contentful-and-javascript-tutorial">
-                Read more
-              </a>
-            </button>
-
-            <button className="button-large button-secondary">
-              <a href="https://github.com/contentful/react-starter">GitHub</a>
-            </button>
-          </div>
-        </article>
-      </section>
-      <section className="river">
-        <img src={screens} alt="React + Contentful" aria-hidden="true" />
-        <article>
-          <h2>Get started using React</h2>
-          <p>
-            Filter paintings based on their Contentful tag using the checkboxes
-            below.
-          </p>
-
-          <ul>
-            <li>Fetches data from the Contentful REST API</li>
-            <li>
-              Filter data using React's <code>useState</code> hook
-            </li>
-          </ul>
-        </article>
-      </section>
-    </>
+    <div>
+        <div className="title">
+          <h1>tpk</h1>
+          <h2>Movie Journal</h2>
+        </div>
+        <p>“life is short and I don't want to have turned to dust without knowing how something feels. without having felt as many things as I could've felt; even if that means to get hurt.
+          movies are magical, they make me feel (hurt) so much at an expense of oh my dreary friend, time.
+          time and time again I've pondered what is worth my time and what isn't. to feel is worth it, hence to watch movies is worth my time and do so I've done, do, and will do.
+          so it goes.”
+        </p>
+    </div>
   )
 }
 

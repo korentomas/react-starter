@@ -1,0 +1,147 @@
+// Import Courier Prime font
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+$color_main: #DA0000;
+$color_accent: #FCBE11;
+$background-color_1: #131313;
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Courier Prime', monospace;
+}
+
+.sidebar {
+  background-color: $background-color_1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  flex-shrink: 0;
+
+  .title {
+    h1 {
+      color: $color_main;
+      font-size: 64px;
+      margin: 0;
+      text-align: center;
+    }
+
+    h2 {
+      color: $color_accent;
+      font-size: 14px;
+      margin: 0;
+      text-align: center;
+    }
+  }
+
+  p {
+    color: white;
+    font-size: 16px;
+    text-align: right;
+    margin-top: 20px;
+  }
+
+  .tags {
+    color: white;
+  }
+
+  .tags label {
+    cursor: pointer;
+  }
+}
+
+.grid {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  padding: 20px;
+
+  .entry {
+    transition: transform 0.3s, filter 0.3s, opacity 0.3s;
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+
+    img {
+      pointer-events: none;
+      transition: border-color 0.3s;
+    }
+
+    .entry-title,
+    .entry-descriptor {
+      color: $color_accent;
+    }
+
+    .entry-date {
+      color: white;
+    }
+
+    .entry-title,
+    .entry-date {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    &:hover {
+      transform: rotate(5deg);
+      filter: none;
+      opacity: 1;
+
+      .entry-descriptor {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .entry-title,
+      .entry-date {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      img {
+        border: 3px groove $color_accent;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 40em) {
+  .river:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .river:nth-child(odd) {
+    flex-direction: row;
+  }
+
+  .river article,
+  .river > img {
+    width: 50%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .grid {
+    order: 1;
+    padding: 10px;
+  }
+}
