@@ -4,7 +4,8 @@ import { Spinner } from '@contentful/f36-spinner'
 import { createClient } from 'contentful'
 import Entry from './Entry'
 import Content from './Content'
-import { entries } from 'contentful-import/dist/transform/transformers'
+import { Routes, Route } from 'react-router-dom';
+import EntryDetail from './EntryDetail';
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -99,7 +100,25 @@ function App() {
             <div>{checkboxes}</div>
           </div>
         </aside>
-        <div className="grid">{entrys}</div>
+        <div>
+          <Routes>
+            {entries.map((entry, index) => (
+              <Route
+                key={index}
+                path={`/entry/${entry.name.replaceAll(' ', '_')}`}
+                element={
+                  <EntryDetail
+                    image={entry.image}
+                    alt={entry.alt}
+                    name={entry.name}
+                    content={entry.content}
+                  />
+                }
+              />
+            ))}
+            <Route path="/" element={<div className="grid">{entrys}</div>} />
+          </Routes>
+        </div>
       </div>
     </main>
   );

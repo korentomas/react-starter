@@ -110,6 +110,39 @@ $background-color_1: #131313;
   }
 }
 
+// Entry Detail Page Styles
+.entry-detail {
+  margin: 20px;
+
+  .entry-image {
+    width: 100%;
+    border-radius: 4px;
+    // Additional styling for the image
+  }
+
+  .entry-title {
+    color: $color_main;
+    font-size: 32px;
+    margin-top: 20px;
+    text-align: center;
+    // Additional styling for the title
+  }
+
+  .entry-content {
+    color: white;
+    font-size: 16px;
+    margin-top: 20px;
+    line-height: 1.6;
+    // Additional styling for the content
+  }
+}
+
+// Override default link styles to remove underline and change color
+a {
+  color: inherit; // Inherit the text color from the parent
+  text-decoration: none; // Removes the underline
+}
+
 @media screen and (min-width: 40em) {
   .river:nth-child(even) {
     flex-direction: row-reverse;
