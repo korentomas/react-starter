@@ -9,7 +9,7 @@ const Content = () => {
       <div className="title">
         <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
           <h1>tpk</h1>
-          <h2>Movie Journal</h2>
+          <h2>mostly a movie journal</h2>
         </Link>
       </div>
       <p>“life is short and I don't want to have turned to dust without knowing how something feels. without having felt as many things as I could've felt; even if that means to get hurt.
