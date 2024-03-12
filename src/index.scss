@@ -115,10 +115,12 @@ $background-color_1: #131313;
   margin: 20px;
 
   .entry-image {
-    width: 100%;
+    max-width: 100%;
     border-radius: 4px;
     max-height: 300px;
-    // Additional styling for the image
+    height: auto;
+    object-fit: cover;
+    /* Additional styling for the image */
   }
 
   .entry-title {
