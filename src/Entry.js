@@ -5,7 +5,7 @@ const Entry = ({ name, image, alt, author, descriptor, content, published }) => 
     <figure className="entry">
       <Link to={`/entry/${name.replaceAll(' ', '_')}`}>
         <div className="image-container">
-          <img className="image-thumb" src={image} alt={alt} />
+          {/* <img className="image-thumb" src={image} alt={alt} /> */}
           <h3 className="entry-title">{name}</h3>
           <h3 className="entry-date">entry written on {published}</h3>
         </div>
